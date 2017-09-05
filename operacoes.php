@@ -7,7 +7,7 @@
 ?>
 		<div class="container-side">
 		<?php foreach($resultados as $resultado): // percorre todos os dados do DB ?>		
-			<table class="table"><!-- Inicio da tabela -->
+			<table class="table hide-sm"><!-- Inicio da tabela DESKTOP -->
 				<?php if($resultado["b_negomerc"] == 1): // O dado atual é do tipo compra ? ?>
 					<?php $tipo = "success" // adiciona a classe success para o conteudo do dado ?>
 
@@ -37,7 +37,56 @@
 					<td><?php echo textToMoney($resultado["n_precmerc"]); ?></td>
 					<td><?php echo traduzTipo($resultado["b_negomerc"]); ?></td>
 				</tr>
-			</table><!-- fim da tabela -->
+			</table><!-- fim da tabela DESKTOP -->
+
+			<table class="table hide-lg-table"> <!-- Inicio da tabela Responsive -->
+				<?php if($resultado["b_negomerc"] == 1): // O dado atual é do tipo compra ? ?>
+					<?php $tipo = "success" // adiciona a classe success para o conteudo do dado ?>
+
+					<thead class="bg-<?php echo $tipo ?>">
+						<tr>
+							<th scope="row" colspan="2"><?php echo traduzTipo($resultado["b_negomerc"]); ?></th>							
+						</tr>
+					</thead>
+				<?php else: // o dado é do tipo venda ? ?>
+					<?php $tipo = "primary" // adiciona a classe primary para o conteudo do dado ?>
+
+					<thead class="bg-<?php echo $tipo ?>">
+						<tr>	
+							<th scope="row" colspan="2"><?php echo traduzTipo($resultado["b_negomerc"]); ?></th>							
+						</tr>
+					</thead>
+				<?php endif; // fim if ?>
+				<tbody>	
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Código da mercadoria</th>
+						<td><?php echo $resultado["n_codimerc"]; ?></td>
+					</tr>
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Tipo da mercadoria</th>
+						<td><?php echo $resultado["c_tipomerc"]; ?></td>
+					</tr>
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Nome da mercadoria</th>
+						<td><?php echo $resultado["c_nomemerc"]; ?></td>
+					</tr>
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Quantidade</th>
+						<td><?php echo $resultado["n_qtdemerc"]; ?></td>
+					</tr>
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Preço</th>
+						<td><?php echo textToMoney($resultado["n_precmerc"]); ?></td>
+					</tr>
+					<tr class="table-<?php echo $tipo ?>">
+						<th>Tipo de Negocio</th>
+						<td><?php echo traduzTipo($resultado["b_negomerc"]); ?></td>
+					</tr>
+				</tbody>
+			</table><!-- Fim da tabela responsive -->
+
+
+
 		<?php endforeach; // fim do for resultados ?>
 		</div>		
 		<!-- Declaração javascript -->
