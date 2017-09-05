@@ -1,0 +1,63 @@
+/* 
+* Estilo das paginas da Plataforma de negociação de mercadorias online
+* Daniel Dias de Souza - 04/09/2017 -  Versão 1.0
+*/
+.nav-side-menu{/* Estilo do side-bar */
+  font-family: verdana;
+  background-color: #2e353d;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+}
+
+.none-margin{/* Estilo para retirar a margem */
+	margin: 0;
+}
+
+.btn-padding{/* Estilo para colocar uma margin-top no botão submit */
+	margin-top: 15px!important;
+}
+
+.hide-lg{/* Estilo para esconder conteudos nas resoluções maiores que 992px de largura */
+	display: none;
+}
+
+.container-side { /* Estilo do container com side-bar */
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+	position: absolute;
+	left: 320px;
+	max-width: 820px;
+}
+
+@media (max-width: 1200px){
+	.container-side {/* Estilo do container com side-bar com resolução menor que 1200px de largura */
+	    max-width: 720px;
+	}
+}
+
+@media(max-width: 992px){
+	.container-side {/* Estilo do container com side-bar com resolução menor que 992px de largura */
+	    max-width: 640px;
+	    left: auto;
+	    position: relative;
+	}
+
+	.nav-side-menu{/* Estilo do nav-side responsivo */
+		position: relative;
+		width: auto;
+		height: auto;
+	}	
+
+	.hide-lg{ /* Estilo para mostrar conteudos escondidos em resoluções maiores que 992px de largura */
+		display: inline;
+	}
+
+	.hide-sm{ /* Estilo para esconder conteudos com resolução de até 992px de largura */
+		display: none;
+	}
+}
