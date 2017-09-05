@@ -1,0 +1,14 @@
+CREATE DATABASE db_mercado;
+USE db_mercado;
+CREATE TABLE tb_mercadoria(
+    id_mercadoria int NOT null AUTO_INCREMENT,
+    n_codimerc integer,
+    c_tipomerc varchar(40),
+    c_nomemerc varchar(40),
+    n_qtdemerc integer(4),
+    n_precmerc decimal(5,2),
+    b_negomerc boolean,
+    PRIMARY KEY(id_mercadoria)
+);
+CREATE USER 'mercado'@'localhost' IDENTIFIED BY 'mercado';
+GRANT ALL PRIVILEGES ON *.* TO 'mercado'@'localhost';
