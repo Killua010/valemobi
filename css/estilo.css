@@ -18,7 +18,7 @@
 .btn-padding{/* Estilo para colocar uma margin-top no botão submit */
 	margin-top: 15px!important;
 }
-
+.hide-lg-table,
 .hide-lg{/* Estilo para esconder conteudos nas resoluções maiores que 992px de largura */
 	display: none;
 }
@@ -59,5 +59,9 @@
 
 	.hide-sm{ /* Estilo para esconder conteudos com resolução de até 992px de largura */
 		display: none;
+	}
+
+	.hide-lg-table{/* Estilo para mostrar tabelas em resoluções de até 992px de largura*/
+		display: table;
 	}
 }
