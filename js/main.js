@@ -42,8 +42,9 @@ function verificar(tbDados){
 	} else if (isNaN(nCodigo.value) || isNaN(nQuantidade.value) || isNaN(nPreço.value)) { // existe algum caracter em um campo somente numerico ?
 		erros.push("Caracter no campo numerico"); // mensagem para o usuario "Caracter no campo numerico"
 		return false;
-	} else if((parseInt(nQuantidade.value) < 1 || parseInt(nQuantidade.value) > 999) || 
-	          (parseMoneytoText(nPreço.value) < 1 || parseMoneytoText(nPreço.value) > 999)){ // quantidade ou preço negativo ou maior que 999?
+	} else if((nQuantidade.value < 1 || nQuantidade.value > 999)|| 
+	          (nPreço.value < 1 || nPreço.value > 999)){ // quantidade ou preço negativo ou maior que 999?*/
+	          	console.log("erro");
 		erros.push("Quantidade invalida"); // mensagem para o usuario quantidade invalida
 		return false;
 	}
