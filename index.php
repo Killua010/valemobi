@@ -46,7 +46,7 @@
 								</label>								
 								<div class="input-group">
   									<span class="input-group-addon">R$</span>
-									<input type="number" step=0.01 name="nPreço" id="nPreço" class="form-control" max="999"><!-- input para o preço numeros com ponto flutuande -->
+									<input type="number" step=0.01 name="nPreço" id="nPreço" class="form-control" max="999" min="0.01"><!-- input para o preço numeros com ponto flutuande -->
 								</div>
 							</div>
 							<div class="col-md-6">
