@@ -43,8 +43,7 @@ function verificar(tbDados){
 		erros.push("Caracter no campo numerico"); // mensagem para o usuario "Caracter no campo numerico"
 		return false;
 	} else if((nQuantidade.value < 1 || nQuantidade.value > 999)|| 
-	          (nPreço.value < 1 || nPreço.value > 999)){ // quantidade ou preço negativo ou maior que 999?*/
-	          	console.log("erro");
+	          (nPreço.value < 1 || nPreço.value > 999)){ // quantidade ou preço negativo ou maior que 999?
 		erros.push("Quantidade invalida"); // mensagem para o usuario quantidade invalida
 		return false;
 	}
